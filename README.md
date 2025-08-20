@@ -60,4 +60,25 @@ Some scripts require the pg_trgm extension for fuzzy string matching in SQL.
 GeoJSON and raster files are provided for QGIS and advanced spatial analysis.
 
 ## Example Use Cases
-Will be added shortly
+### Population Data
+<img width="1920" height="1357" alt="ankara_district_pop" src="https://github.com/Zodijackyl98/geospatial_platform/blob/main/qgis_related/examples/ankara_district_pop.png" />
+
+### Earthquake Data
+Earthquakes mag >= 3.0  that occured in Turkey according to USGS.
+<img width="1920" height="1357" alt="turkey_earthy_ex" src="https://github.com/Zodijackyl98/geospatial_platform/blob/main/qgis_related/examples/turkey_earthy_ex.png" />
+
+Earthqakes that have episentr located outside of lands but still resides in Turkey. This was achieved only applying filters to the corresponding table, no area selection tool was used. Information can be found inside `earthy.sql`.
+<img width="1920" height="1357" alt="turkey_earthy_sea_only" src="https://github.com/Zodijackyl98/geospatial_platform/blob/main/qgis_related/examples/turkey_earthy_sea_only.png" />
+
+### Satellite Data
+Using Sentinel Hub services and applying two different custom scripts for detection of respectively urban building and vegetation detection for a particular district in Istanbul.
+Total area of vegetation can be calculated by applying making simple queries in `create_geometries.sql`.
+Total calculated area of Kadıköy district is 25.13 km2 and about %42 of the total area counts as vegetation according to the calculations. If we take Ataşehir which is another district that is adjacent to Kadıköy that also shares similar total area of 25.22 km2, total calculated vegetation of that distict is 7.59 km2 which equals about %30 of the total area. To conclude, even though Kadıköy and Ataşehir districts share similar total area, Kadıköy is %12 greener than Ataşehir. 
+<img width="1920" height="1357" alt="urban_building_kadikoy" src="https://github.com/Zodijackyl98/geospatial_platform/blob/main/qgis_related/examples/urban_building_kadikoy.png" />
+
+
+<img width="1920" height="1357" alt="vegetation_kadikoy" src="https://github.com/Zodijackyl98/geospatial_platform/blob/main/qgis_related/examples/vegetation_kadikoy.png" />
+
+<img width="1920" height="1357" alt="vegetation_atasehir" src="https://github.com/Zodijackyl98/geospatial_platform/blob/main/qgis_related/examples/vegetation_atasehir.png" />
+
+
