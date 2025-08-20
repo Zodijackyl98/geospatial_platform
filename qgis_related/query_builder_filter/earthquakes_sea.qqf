@@ -1,0 +1,1 @@
+<Query>"province_name" IS NULL AND "province_name_near" IS NOT NULL AND "city_name" IS NOT NULL AND "place" = 'Turkey'</Query>
