@@ -10,6 +10,10 @@ table_name = "turkey_earthy"   # Change to your desired table name
 # Read CSV
 df = pd.read_csv(csv_path)
 
+
+df['time_format_full'] = df['time_format_full'].apply(lambda x: x.split('.')[0])
+df['time_format_full'] = pd.to_datetime(df['time_format_full'], format='%Y-%m-%d %H:%M:%S')
+
 # Create geometry column from longitude and latitude
 gdf = gpd.GeoDataFrame(
     df,
@@ -19,7 +23,6 @@ gdf = gpd.GeoDataFrame(
 
 # Connect to PostGIS database
 engine = create_engine("postgresql://mert:password@localhost:5432/united")  # Update credentials
-
 # Export to PostGIS (geometry column will be created)
 gdf.to_postgis(table_name, engine, if_exists='replace', index=False)
 
